@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+    <title>메뉴 추천</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <h2>오늘의 메뉴는?</h2>
+      <div class="menu">
+        <li>
+          <input type="checkbox" name="menu" value="한식" onclick="getCheckboxValue()" />
+          <span>한식</span>
+        </li>
+        <li>
+          <input type="checkbox" name="menu" value="햄버거" onclick="getCheckboxValue()" />
+          <span>햄버거</span>
+        </li>
+        <input type="checkbox" name="menu" value="치킨" onclick="getCheckboxValue()" />치킨
+        <input type="checkbox" name="menu" value="중식" onclick="getCheckboxValue()" />중식
+        <input type="checkbox" name="menu" value="분식" onclick="getCheckboxValue()" />분식
+        <input type="checkbox" name="menu" value="돈까스" onclick="getCheckboxValue()" />돈까스
+        <input type="checkbox" name="menu" value="피자" onclick="getCheckboxValue()" />피자
+        <input type="checkbox" name="menu" value="초밥" onclick="getCheckboxValue()" />초밥
+        <input type="checkbox" name="menu" value="국밥" onclick="getCheckboxValue()" />국밥
+        <input type="checkbox" name="menu" value="고기" onclick="getCheckboxValue()" />고기
+      </div>
+      <button onclick="result()">룰렛 생성하기</button>
+      <div id="random" class="random">
+        <!-- <canvas width="380" height="380"></canvas>
+        <button onclick="rotate()">뭐먹을까?</button> -->
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="index.js"></script>
+</html>
