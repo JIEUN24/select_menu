@@ -38,9 +38,12 @@ function getCheckboxValue() {
 const result = () => {
   const canvasWrap = document.getElementById("random");
   const canvas = document.createElement("canvas");
+  const button = document.createElement("button");
   canvas.width = "380";
   canvas.height = "380";
-  canvasWrap.append(canvas);
+  button.innerText = "뭐먹을까?";
+  button.id = "rotate";
+  canvasWrap.append(canvas, button);
 
   if (product.length < 2) {
     alert("메뉴를 두개 이상 체크해주세요!");
@@ -101,21 +104,46 @@ const newMake = () => {
   }
 };
 
-const rotate = () => {
-  canvas.style.transform = `initial`;
-  canvas.style.transition = `initial`;
-
-  setTimeout(() => {
-    const ran = Math.floor(Math.random() * product.length);
-
-    const arc = 360 / product.length;
-    const rotate = ran * arc + 3600 + arc * 3 - arc / 4;
-
-    canvas.style.transform = `rotate(-${rotate}deg)`;
-    canvas.style.transition = `2s`;
-
-    setTimeout(() => alert(`오늘의 야식은?! ${product[ran]} 어떠신가요?`), 2000);
-  }, 1);
+document.getElementById("rotate").onclick = function () {
+  console.log("이거맞니?");
 };
+
+// const rotateBtn = document.getElementById("rotate");
+// console.log(rotateBtn);
+// rotateBtn.addEventListener("click", () => {
+//   console.log("이거맞니?");
+//   const canvas = document.querySelector("canvas");
+//   canvas.style.transform = `initial`;
+//   canvas.style.transition = `initial`;
+
+//   setTimeout(() => {
+//     const ran = Math.floor(Math.random() * product.length);
+
+//     const arc = 360 / product.length;
+//     const rotate = ran * arc + 3600 + arc * 3 - arc / 4;
+
+//     canvas.style.transform = `rotate(-${rotate}deg)`;
+//     canvas.style.transition = `2s`;
+
+//     setTimeout(() => alert(`오늘의 야식은?! ${product[ran]} 어떠신가요?`), 2000);
+//   }, 1);
+// });
+
+// const rotate = () => {
+//   canvas.style.transform = `initial`;
+//   canvas.style.transition = `initial`;
+
+//   setTimeout(() => {
+//     const ran = Math.floor(Math.random() * product.length);
+
+//     const arc = 360 / product.length;
+//     const rotate = ran * arc + 3600 + arc * 3 - arc / 4;
+
+//     canvas.style.transform = `rotate(-${rotate}deg)`;
+//     canvas.style.transition = `2s`;
+
+//     setTimeout(() => alert(`오늘의 야식은?! ${product[ran]} 어떠신가요?`), 2000);
+//   }, 1);
+// };
 
 // newMake();
